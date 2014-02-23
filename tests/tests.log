@@ -1,0 +1,3 @@
+DEBUG tests/bubblesort_tests.c:28: ----- RUNNING: ./tests/bubblesort_tests
+DEBUG tests/bubblesort_tests.c:24: 
+----- test_int

@@ -1,0 +1,11 @@
+#include "minunit.h"
+#include <bubble_sort.h>
+
+char *all_tests() {
+    mu_suite_start();
+
+    mu_run_test(test_create);
+	return NULL;
+}
+
+RUN_TESTS(all_tests);
