@@ -3,11 +3,24 @@
 #include <string.h>
 #include "compare.h"
 
+static void swap(char *a, char *b, unsigned width)
+{
+    char tmp;
+    if(a != b)
+    {
+	while(width--)
+	{
+	    tmp = *a;
+	    *a++ = *b;
+	    *b++ = tmp;
+	}
+    }
+}
+
 void bubble_sort (void* base, size_t num, size_t width,int (*compar)(const void*,const void*))
 {
 	int i,j,k;
 	unsigned char *ptr = base;
-	unsigned char tmp[256];
 
 	if(num < 2 || width == 0)
 		return;
@@ -19,11 +32,8 @@ void bubble_sort (void* base, size_t num, size_t width,int (*compar)(const void*
 			k = compar((void *)(ptr + width * (j-1)), (void *)(ptr + width * j));
 
 			if(k > 0)
-			{
-				memcpy(tmp, ptr + width*(j-1), width);
-				memcpy(ptr + width*(j-1), ptr + width*j, width);
-				memcpy(ptr + width * j, tmp, width);
-			}
+			    swap(ptr + width * (j-1), ptr + width * j, width);
+			
 		}
 	}
 }
