@@ -20,7 +20,7 @@ static void swap(char *a, char *b, unsigned width)
 void bubble_sort (void* base, size_t num, size_t width,int (*compar)(const void*,const void*))
 {
 	int i,j,k;
-	unsigned char *ptr = base;
+	char *ptr = base;
 
 	if(num < 2 || width == 0)
 		return;

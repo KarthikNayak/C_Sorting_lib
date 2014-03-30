@@ -1,4 +1,5 @@
 #include "minunit.h"
+#include <compare.h>
 #include <bubble_sort.h>
 
 int a[] = {34, 23, 23, 2, 12, 35, 24, 54};
@@ -33,7 +34,7 @@ char *test_char(){
 char *test_char2(){
 	int i = 0;
 
-	bubble_sort(cha2, size_a, sizeof(char *), compare_string);
+	bubble_sort(cha2, size_a, sizeof(char *), compare_stringv2);
 	for(i = 1; i < size_a; i++){
 		mu_assert(!(strcmp(cha[i],cha[i-1]) < 0), "Not Sorted Char");			
 	}
@@ -42,9 +43,9 @@ char *test_char2(){
 }
 
 char *all_tests() {
-    mu_suite_start();
+        mu_suite_start();
 
-    mu_run_test(test_int);
+        mu_run_test(test_int);
 	mu_run_test(test_char);
 	mu_run_test(test_char2);
 	return NULL;
