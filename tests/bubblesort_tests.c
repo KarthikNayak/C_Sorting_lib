@@ -25,7 +25,7 @@ char *test_char(){
 
 	bubble_sort(cha, size_a, 20, compare_string);
 	for(i = 1; i < size_a; i++){
-		mu_assert(!(strcmp(cha[i],cha[i-1]) < 0), "Not Sorted Char");			
+		mu_assert(!(strcmp(cha[i], cha[i-1]) < 0), "Not Sorted Char");
 	}
 
 	return NULL;
@@ -36,7 +36,7 @@ char *test_char2(){
 
 	bubble_sort(cha2, size_a, sizeof(char *), compare_stringv2);
 	for(i = 1; i < size_a; i++){
-		mu_assert(!(strcmp(cha[i],cha[i-1]) < 0), "Not Sorted Char");			
+		mu_assert(!(strcmp(cha2[i], cha2[i-1]) < 0), "Not Sorted Char");
 	}
 
 	return NULL;
@@ -47,7 +47,7 @@ char *all_tests() {
 
         mu_run_test(test_int);
 	mu_run_test(test_char);
-	mu_run_test(test_char2);
+ 	mu_run_test(test_char2);
 	return NULL;
 }
 
