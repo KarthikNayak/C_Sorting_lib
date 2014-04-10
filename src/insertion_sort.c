@@ -17,7 +17,7 @@ static void swap(char *a, char *b, unsigned width)
     }
 }
 
-void insertion_sort (void* base, size_t num, size_t width,int (*compar)(void*, void*))
+void insertion_sort (void* base, size_t num, size_t width, int (*compar)(void*, void*))
 {
         unsigned int i, j, k;
 	char *ptr = base;
