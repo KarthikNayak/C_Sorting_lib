@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "compare.h"
+
+static void swap(char *a, char *b, unsigned width)
+{
+    char tmp;
+    if(a != b)
+    {
+	while(width--)
+	{
+	    tmp = *a;
+	    *a++ = *b;
+	    *b++ = tmp;
+	}
+    }
+}
